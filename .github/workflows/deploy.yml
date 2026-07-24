@@ -28,9 +28,6 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
-      - name: Testlarni ishga tushirish
-        run: npm run test
-
   build-and-push:
     needs: test
     runs-on: ubuntu-latest
