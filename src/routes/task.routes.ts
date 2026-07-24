@@ -37,7 +37,7 @@ const router = Router();
  *       201:
  *         description: Task created
  */
-router.post("/create", authMiddleware, addTask);
+router.post("/createeee", authMiddleware, addTask);
 
 /**
  * @swagger
