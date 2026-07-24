@@ -25,6 +25,8 @@ jobs:
 
       - name: Prisma Client generatsiya qilish
         run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Testlarni ishga tushirish
         run: npm run test
