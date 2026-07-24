@@ -1,15 +1,7 @@
 import { Router } from "express";
-import {
-  addTask,
-  findAllTasks,
-  findTaskById,
-  updateTaskById,
-  deleteTaskById,
-} from "../controllers/tasks.controller.js";
+import { addTask, findAllTasks, findTaskById, updateTaskById, deleteTaskById, } from "../controllers/tasks.controller.js";
 import authMiddleware from "../middlewares/auth.middleware.js";
-
 const router = Router();
-
 /**
  * @swagger
  * /tasks/create:
@@ -38,7 +30,6 @@ const router = Router();
  *         description: Task created
  */
 router.post("/create", authMiddleware, addTask);
-
 /**
  * @swagger
  * /tasks/all:
@@ -51,7 +42,6 @@ router.post("/create", authMiddleware, addTask);
  *         description: List of tasks
  */
 router.get("/all", authMiddleware, findAllTasks);
-
 /**
  * @swagger
  * /tasks/{id}:
@@ -70,7 +60,6 @@ router.get("/all", authMiddleware, findAllTasks);
  *         description: Task found
  */
 router.get("/:id", authMiddleware, findTaskById);
-
 /**
  * @swagger
  * /tasks/{id}:
@@ -108,7 +97,6 @@ router.get("/:id", authMiddleware, findTaskById);
  *         description: Avtorizatsiyadan o'tilmagan
  */
 router.put("/:id", authMiddleware, updateTaskById);
-
 /**
  * @swagger
  * /tasks/{id}:
@@ -127,5 +115,4 @@ router.put("/:id", authMiddleware, updateTaskById);
  *         description: Task deleted
  */
 router.delete("/:id", authMiddleware, deleteTaskById);
-
 export default router;

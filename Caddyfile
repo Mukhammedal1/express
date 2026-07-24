@@ -1,0 +1,3 @@
+express.notee.uz {
+    reverse_proxy app:3002
+}

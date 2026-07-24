@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import prisma from "../config/db";
-import { errorHandler } from "../helpers/error-handler";
-import { taskValidation } from "../validations/tasks.validation";
+import prisma from "../config/db.js";
+import { errorHandler } from "../helpers/error-handler.js";
+import { taskValidation } from "../validations/tasks.validation.js";
 
 const addTask = async (req: Request, res: Response) => {
   try {

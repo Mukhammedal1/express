@@ -1,16 +1,6 @@
 import { Router } from "express";
-import {
-  addUser,
-  findAllUsers,
-  findUserById,
-  deleteUserById,
-  updateUserById,
-  activateUser,
-  loginUser,
-} from "../controllers/users.controller.js";
-
+import { addUser, findAllUsers, findUserById, deleteUserById, updateUserById, activateUser, loginUser, } from "../controllers/users.controller.js";
 const router = Router();
-
 /**
  * @swagger
  * /users/register:
@@ -42,7 +32,6 @@ const router = Router();
  *         description: User created successfully
  */
 router.post("/register", addUser);
-
 /**
  * @swagger
  * /users/all:
@@ -55,7 +44,6 @@ router.post("/register", addUser);
  *         description: Users list
  */
 router.get("/all", findAllUsers);
-
 /**
  * @swagger
  * /users/{id}:
@@ -75,7 +63,6 @@ router.get("/all", findAllUsers);
  *         description: User found
  */
 router.get("/:id", findUserById);
-
 /**
  * @swagger
  * /users/{id}:
@@ -111,7 +98,6 @@ router.get("/:id", findUserById);
  *         description: User updated successfully
  */
 router.put("/:id", updateUserById);
-
 /**
  * @swagger
  * /users/{id}:
@@ -131,7 +117,6 @@ router.put("/:id", updateUserById);
  *         description: User deleted successfully
  */
 router.delete("/:id", deleteUserById);
-
 /**
  * @swagger
  * /users/activate/{link}:
@@ -151,7 +136,6 @@ router.delete("/:id", deleteUserById);
  *         description: Account activated successfully
  */
 router.get("/activate/:link", activateUser);
-
 /**
  * @swagger
  * /users/login:
@@ -180,5 +164,4 @@ router.get("/activate/:link", activateUser);
  *         description: Login successful
  */
 router.post("/login", loginUser);
-
 export default router;

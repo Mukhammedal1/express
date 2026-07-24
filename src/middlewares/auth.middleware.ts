@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import userJwtService from "../services/user-jwt.service";
+import userJwtService from "../services/user-jwt.service.js";
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
   try {

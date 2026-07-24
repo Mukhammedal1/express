@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import * as bcrypt from "bcrypt";
 import * as uuid from "uuid";
-import prisma from "../config/db";
-import { errorHandler } from "../helpers/error-handler";
-import { userValidation } from "../validations/users.validation";
-import userJwt from "../services/user-jwt.service";
-import mailService from "../services/mail.service";
+import { userValidation } from "../validations/users.validation.js";
+import { errorHandler } from "../helpers/error-handler.js";
+import prisma from "../config/db.js";
+import mailService from "../services/mail.service.js";
+import userJwtService from "../services/user-jwt.service.js";
 
 const addUser = async (req: Request, res: Response) => {
   try {
@@ -91,7 +91,7 @@ const loginUser = async (req: Request, res: Response) => {
       is_active: user.is_active,
     };
 
-    const tokens = userJwt.generateTokens(payload);
+    const tokens = userJwtService.generateTokens(payload);
     await prisma.user.update({
       where: { id: user.id },
       data: { refresh_token: tokens.refreshToken },
