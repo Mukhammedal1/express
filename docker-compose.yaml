@@ -1,9 +1,7 @@
 services:
   app:
-    # image: ghcr.io/sizning-username/sizning-repo:latest
     build: .
-    ports:
-      - "3002:3002"
+    container_name: express-app
     expose:
       - "3002"
     env_file:
@@ -14,6 +12,7 @@ services:
         condition: service_healthy
     networks:
       - app-network
+      - shared-network
 
   postgres:
     image: postgres:16-alpine
@@ -35,8 +34,8 @@ services:
 networks:
   app-network:
     driver: bridge
+  shared-network:
+    external: true
 
 volumes:
   postgres-data:
-  caddy_data:
-  caddy_config:
