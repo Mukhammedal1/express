@@ -1,19 +1,4 @@
 services:
-  caddy:
-    image: caddy:latest
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    restart: unless-stopped
-    depends_on:
-      - app
-    networks:
-      - app-network
-
   app:
     # image: ghcr.io/sizning-username/sizning-repo:latest
     build: .
