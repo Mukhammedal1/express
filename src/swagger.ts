@@ -10,7 +10,7 @@ export const swaggerSpec = swaggerJsdoc({
     },
     servers: [
       {
-        url: process.env.API_URL || "https://express.notee.uz",
+        url: (process.env.API_URL || "https://express.notee.uz") + "/api",
       },
     ],
     security: [
