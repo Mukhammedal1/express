@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    image: ghcr.io/mukhammedal1/express:latest
     container_name: express-app
     expose:
       - "3002"
